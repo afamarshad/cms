@@ -1,0 +1,44 @@
+$('#submit').on('click', function() {
+		$("#submit").attr("disabled", "disabled");
+        var uname = $('#uname').val();
+        var Password = $('#password').val();
+        var Fname = $('#fname').val();
+        var Lname = $('#lname').val();
+        var DTCreated = $('#datecreated').val();
+        var DTUpdated = $('#dateupdated').val();
+        var DTDeleted = $('#datedeleted').val();
+        var Status = $('#status').val();
+		if(uname!="" && password!="" && Fname!="" && Lname!="" && DTCreated!="" && DTUpdated!="" && DTDeleted!="" && Status!="" ){
+			$.ajax({
+				url: "insert.php",
+				type: "POST",
+				data: {
+					uname: uname,
+					password: password,
+					Fname: Fname,
+					Lname: Lname,
+                    DTCreated:DTCreated,
+                    DTUpdated:DTUpdated,
+                    DTDeleted:DTDeleted,
+                    Status:Status
+				},
+				// cache: false,
+				success: function(dataResult){
+					var dataR = JSON.parse(dataResult);
+					if(dataR.statusCode==200){
+						// $("#butsave").removeAttr("disabled");
+						// $('#fupForm').find('input:text').val('');
+						$("#success").show();
+						$('#success').html('Data added successfully !'); 						
+					}
+					else if(dataResult.statusCode==201){
+					   alert("Error occured !");
+					}
+					
+				}
+			});
+		}
+		else{
+			alert('Please fill all the field !');
+		}
+	});

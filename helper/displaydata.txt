@@ -1,0 +1,19 @@
+<?php  
+                          for($i=0; $row = $result->fetch(); $i++)
+                          {  
+                               echo '  
+                               <tr>  
+                                    <td>'.$row["username"].'</td>  
+                                    <td>'.$row["password"].'</td>  
+                                    <td>'.$row["fname"].'</td>  
+                                    <td>'.$row["lname"].'</td>  
+                                    <td>'.$row["dtcreated"].'</td> 
+                                    <td>'.$row["dtupdated"].'</td> 
+                                    <td>'.$row["dtdeleted"].'</td> 
+                                    <td>'.$row["status"].'</td>  
+                                    <td><button id="remove" class="btn btn-sm btn-primary">Edit</button></td> 
+                                    <td><button id="remove" class="btn btn-sm btn-danger" data-id="'.$row["id"].'">Delete</button></td>  
+                               </tr>  
+                               ';  
+                          }  
+                          ?>  

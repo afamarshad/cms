@@ -1,0 +1,44 @@
+ var table =  $('#user_data').DataTable({
+            
+            "ajax":{
+                "url":"viewData.php",
+                "dataSrc": "",
+
+            },
+            "columns":[
+                {"data":"username"},
+                {"data":"password"},
+                {"data":"fname"},
+                {"data":"lname"},
+                {"data":"dtcreated"},
+                {"data":"dtupdated"},
+                {"data":"dtdeleted"},
+                {"data":"status"},
+                // {
+                //     "targets": -1,
+                //     "data": null,
+                  
+                //     "defaultContent": "<button class='btn btn-sm btn-primary'>Edit</button>",
+                //     "action": "edit",
+                // },
+                // {
+                //     "targets": -1,
+                //     "data": null,
+                //     "defaultContent": "<button class='btn btn-sm btn-danger' onclick='Delete(this)'>Delete</button>",
+                //     "action": "delete",
+                // },
+                {
+                    'data': null,
+                        'render': function (data, type, row) 
+                        {
+                            var id = row.id;
+                            console.log(id);
+                            Delete(id)
+                        //    console.log('<button class="btn btn-sm btn-danger" onclick="Delete("' + id + '")">Delete</button>');
+                            return ('<button class="btn btn-sm btn-danger" onclick="Delete("' + id + '")">Delete</button>');
+                        }
+                 }
+
+            ]
+            
+        });

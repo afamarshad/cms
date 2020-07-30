@@ -1,0 +1,53 @@
+ $(document).ready(function(){  
+        $('#user_data').DataTable({
+            "ajax":{
+                "url":"viewData.php",
+                "dataSrc": ""
+            },
+            "columns":[
+                {"data":"username"},
+                {"data":"password"},
+                {"data":"fname"},
+                {"data":"lname"},
+                {"data":"dtcreated"},
+                {"data":"dtupdated"},
+                {"data":"dtdeleted"},
+                {"data":"status"}
+            ]
+        });  
+
+        // $("#submit").click(function(){
+
+        //     var uname = document.getElementById("uname");
+        //     var Password =document.getElementById("password");
+        //     var Fname =document.getElementById("fname");
+        //     var Lname =document.getElementById("lname");
+        //     var DTCreated =document.getElementById("datecreated");
+        //     var DTUpdated =document.getElementById("dateupdated");
+        //     var DTDeleted =document.getElementById("datedeleted");
+        //     var Status =document.getElementById("status");
+
+        //     var dataString = 'uname='+uname'&password='+Password'&fname='+Fname'&lname='+Lname'&datecreated='+DTCreated'&dateupdated='+DTUpdated'&datedeleted='+DTDeleted'&status='+Statuspdo;
+        //     $.ajax({
+        //     type:'POST',
+        //     data:dataString,
+        //     url:'insert.php',
+        //     success:function(data){
+        //     // if(data="Data Inserted!") {
+        //     //     alert("Data Inserted Successfully!");
+        //     //     } else {
+        //     //     alert("Data not Inserted!"); 
+        //     //     }
+        //     //     } 
+        //     // });
+        //     function getCSS() {
+        //     return $.get('some.css', function(css) { 
+
+        //     }).promise();
+        //     }
+        //     console.log(response[0]);
+        //     console.log(response[1]);
+        // });
+        
+
+    });  
